@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Search Abstraction Layer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Search Abstraction Layer</h1>
+        <hr>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Usage</div>
+            <div class="panel-body">
+                <b>Latest Searches Endpoint</b>:
+                <code>https://savagedev-image-search.herokuapp.com/latest</code>
+                <br>
+                <br>
+                Response Format:
+<pre>
+{
+    "term": "{most_recent_searched_term}",
+    "when": "{date_when_searched}"
+}
+</pre>
+                <hr>
+                <b>Image Search Endpoint</b>:
+                <code>https://savagedev-image-search.herokuapp.com/{query}</code>
+                <p>This will respond with an array of 10 images.</p>
+                <code>{query}</code> should be what you want to find images for.
+                <br>
+                <br>
+                <b>Optional Parameters</b>:
+                <code>?offset={amount}</code> Offset will allow you to paginate through the images.
+                <br>
+                <br>
+                Response Format:
+<pre>
+[
+    {
+        "url": "{link_to_image}",
+        "snippet": "{short_description_of_image}",
+        "thumbnail": "{link_to_image_thumbnail}",
+        "context": "{link_to_page_where_image_was_found}"
+    }
+]
+</pre>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
